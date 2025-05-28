@@ -4,6 +4,8 @@ set -o nounset
 set -o errexit
 set -o pipefail
 
+trap 'sleep 2h' EXIT SIGTERM
+
 ODF_INSTALL_NAMESPACE=openshift-storage
 ODF_OPERATOR_CHANNEL="${ODF_OPERATOR_CHANNEL:-'stable-4.12'}"
 ODF_SUBSCRIPTION_NAME="${ODF_SUBSCRIPTION_NAME:-'odf-operator'}"
